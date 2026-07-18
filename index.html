@@ -3,327 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHICO - SRT</title>
+    <title>TU NOMBRE - CÓDIGOS PLAY</title>
     
-    <!-- Script de protección y redirección -->
-    <script>
-    (function() {
-        const dominioPermitido = "tublogdigitalnew.blogspot.com";
-        const paginaProtegida = "https://sensihanzx03-web.github.io/Chico-srt/";
-        const redireccion = "https://tublogdigitalnew.blogspot.com/search?updated-max=2026-01-31T16:24:00-08:00&max-results=5&m=1#PageNo=2";
-        const urlActual = window.location.origin + window.location.pathname;
-        const urlProtegida = new URL(paginaProtegida);
-        const paginaNormalizada = urlProtegida.origin + urlProtegida.pathname;
-
-        if (urlActual.startsWith(paginaNormalizada)) {
-            const referrer = document.referrer || "";
-            if (!referrer.includes(dominioPermitido)) {
-                window.location.replace(redireccion);
-            }
-        }
-    })();
-    </script>
-
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- CDN Oficial de Font Awesome para cargar los logotipos reales -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap');
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Orbitron', sans-serif; 
-            background: #0a0a0f; 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #09090e;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            background: rgba(20, 20, 35, 0.7);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 0, 127, 0.2);
+            box-shadow: 0 0 25px rgba(255, 0, 127, 0.15);
+            width: 100%;
+            max-width: 440px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            color: #ff007f;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .status-box {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            border-left: 4px solid #ff007f;
+            text-align: left;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #ff007f, #7f00ff);
+            color: #ffffff;
+            font-weight: bold;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(255, 0, 127, 0.3);
+        }
+
+        .btn:hover {
+            filter: brightness(1.2);
+            box-shadow: 0 6px 20px rgba(255, 0, 127, 0.5);
+        }
+
+        .btn:disabled {
+            background: #222;
+            color: #666;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        .key-box {
+            display: none;
+            margin-top: 1.5rem;
+            background: rgba(255, 0, 127, 0.05);
+            border: 1px dashed #ff007f;
+            padding: 1rem;
+            border-radius: 6px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .key-text {
+            font-family: monospace;
+            font-size: 1.5rem;
+            color: #ff007f;
+            word-break: break-all;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .copy-btn {
+            background: transparent;
+            border: 1px solid #ff007f;
+            color: #ff007f;
+            padding: 0.4rem 1.2rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+
+        .copy-btn:hover {
+            background: #ff007f;
+            color: #ffffff;
+        }
+
+        .social-container {
+            display: none;
+            margin-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .social-title {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 0.75rem;
+            border-radius: 6px;
             color: #fff;
-            overflow-x: hidden;
-            background-image: 
-                linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+            transition: transform 0.2s, filter 0.2s;
         }
-        
-        /* Partículas de fondo */
-        #particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
-        .particle { position: absolute; width: 2px; height: 2px; background: #00ff88; border-radius: 50%; animation: float 8s infinite; opacity: 0.4; }
-        @keyframes float { 
-            0% { transform: translateY(100vh) translateX(0); opacity: 0; } 
-            50% { opacity: 0.6; } 
-            100% { transform: translateY(-10vh) translateX(30px); opacity: 0; } 
+
+        .social-btn i {
+            font-size: 1.2rem;
+            width: 20px;
         }
-        
-        /* Layout & Header */
-        .top-bar { border-bottom: 1px solid rgba(0,255,136,0.2); background: rgba(10,10,15,0.8); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; }
-        .header-container { max-width: 1200px; margin: auto; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; }
-        .logo { display: flex; align-items: center; gap: 8px; font-size: 1.2rem; font-weight: 900; }
-        .logo i { color: #00ff88; }
-        .glow-text { color: #00ff88; text-shadow: 0 0 15px rgba(0,255,136,0.8), 0 0 30px rgba(0,255,136,0.4); }
-        .menu-btn { background: none; border: none; color: rgba(255,255,255,0.7); cursor: pointer; }
-        
-        /* Hero Section */
-        .hero { position: relative; z-index: 1; max-width: 800px; margin: auto; padding: 40px 20px 60px; text-align: center; }
-        .badge-online { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 50px; border: 1px solid rgba(0,255,136,0.3); background: rgba(0,0,0,0.4); font-size: 0.75rem; font-weight: bold; margin-bottom: 40px; }
-        .badge-online .dot { width: 8px; height: 8px; background: #00ff88; border-radius: 50%; animation: pulse 2s infinite; }
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
-        
-        .hero h1 { font-size: 4rem; font-weight: 900; margin-bottom: 16px; }
-        .hero .subtitulo { color: rgba(255,255,255,0.6); margin-bottom: 50px; font-size: 1rem; display: flex; align-items: center; justify-content: center; gap: 8px; }
-        
-        /* Stats */
-        .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; max-width: 400px; margin: 0 auto 24px; }
-        .stat-box { border: 1px solid rgba(0,255,136,0.3); border-radius: 16px; background: rgba(0,0,0,0.4); backdrop-filter: blur(5px); padding: 16px; display: flex; align-items: center; justify-content: center; gap: 12px; }
-        .stat-box i { color: #00ff88; width: 20px; height: 20px; }
-        .stat-box .num { font-size: 1.5rem; font-weight: bold; color: #00ff88; }
-        .stat-box .label { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
-        
-        .soporte-box { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(0,255,136,0.3); border-radius: 16px; background: rgba(0,0,0,0.4); padding: 12px 24px; margin-bottom: 50px; }
-        .soporte-box i { color: #00ff88; width: 16px; height: 16px; }
-        
-        /* Buttons */
-        .btn-main, .btn-second { width: 100%; max-width: 350px; margin: 0 auto 16px; font-weight: 900; padding: 16px; border-radius: 16px; border: none; display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer; text-decoration: none; font-family: 'Orbitron'; font-size: 1rem; transition: 0.3s; }
-        .btn-main { background: #00ff88; color: #0a0a0f; box-shadow: 0 0 20px rgba(0,255,136,0.4); }
-        .btn-second { background: rgba(255,255,255,0.05); color: #fff; border: 1px solid rgba(255,255,255,0.1); }
-        .btn-main:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(0,255,136,0.6); }
-        
-        /* Products Section */
-        .section { max-width: 1200px; margin: 60px auto; padding: 0 20px; position: relative; z-index: 1; }
-        .section-header { text-align: center; margin-bottom: 40px; }
-        .badge-section { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; background: rgba(0,255,136,0.1); border: 1px solid rgba(0,255,136,0.2); border-radius: 8px; color: #00ff88; font-size: 0.8rem; margin-bottom: 16px; }
-        .highlight { color: #00ff88; }
-        
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-        .product-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 30px; position: relative; overflow: hidden; transition: 0.3s; }
-        .product-card:hover { border-color: #00ff88; background: rgba(0,255,136,0.02); transform: translateY(-5px); }
-        .product-badge { position: absolute; top: 20px; right: 20px; font-size: 0.7rem; padding: 4px 12px; border-radius: 50px; background: rgba(255,255,255,0.1); }
-        .product-icon { margin-bottom: 20px; }
-        .product-icon i { width: 32px; height: 32px; }
-        .product-title { font-size: 1.5rem; margin-bottom: 8px; }
-        .product-desc { color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-bottom: 24px; }
-        
-        .price-section { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; margin-bottom: 24px; }
-        .price-row { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.9rem; }
-        .price { color: #00ff88; font-weight: bold; }
-        
-        .btn-comprar { background: #fff; color: #000; padding: 12px; border-radius: 12px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: bold; transition: 0.3s; }
-        .btn-comprar:hover { background: #00ff88; }
-        
-        /* Creator Card */
-        .creator-card { background: linear-gradient(145deg, rgba(0,255,136,0.1), rgba(0,0,0,0)); border: 1px solid rgba(0,255,136,0.2); border-radius: 32px; padding: 40px; text-align: center; max-width: 600px; margin: 0 auto; }
-        .creator-icon { width: 80px; height: 80px; background: rgba(0,255,136,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; }
-        .creator-icon i { width: 40px; height: 40px; color: #00ff88; }
-        .creator-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 0.7rem; color: #00ff88; margin-bottom: 12px; }
-        .creator-name { font-size: 2rem; margin-bottom: 8px; }
-        .creator-role { color: rgba(255,255,255,0.6); margin-bottom: 30px; }
-        
-        /* Footer */
-        footer { border-top: 1px solid rgba(0,255,136,0.2); background: rgba(10,10,15,0.8); backdrop-filter: blur(10px); padding: 40px 20px; margin-top: 60px; position: relative; z-index: 1; }
-        .footer-content { max-width: 1200px; margin: auto; text-align: center; }
-        .footer-logo { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 1.3rem; font-weight: 900; margin-bottom: 12px; }
-        .footer-logo i { color: #00ff88; }
-        .footer-text { color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-bottom: 24px; }
-        
-        /* Float Button */
-        .btn-float { position: fixed; bottom: 24px; right: 24px; width: 56px; height: 56px; background: #00ff88; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 25px rgba(0,255,136,0.6); text-decoration: none; z-index: 99; transition: 0.3s; }
-        .btn-float:hover { transform: scale(1.1); }
-        .btn-float i { color: #0a0a0f; width: 24px; height: 24px; }
-        
-        @media(max-width: 768px) {
-            .hero h1 { font-size: 2.8rem; }
-            .stats-grid { grid-template-columns: 1fr; }
-            .products-grid { grid-template-columns: 1fr; }
+
+        .social-btn:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.15);
+        }
+
+        .whatsapp { background: #25D366; }
+        .telegram { background: #0088cc; }
+        .tiktok { background: #000000; border: 1px solid #fe2c55; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
-    <div id="particles"></div>
-    
-    <header class="top-bar">
-        <div class="header-container">
-            <div class="logo">
-                <i data-lucide="crown"></i>
-                <span><span class="glow-text">CHICO</span> SRT</span>
-            </div>
-            <button class="menu-btn"><i data-lucide="menu"></i></button>
-        </div>
-    </header>
-    
-    <main>
-        <section class="hero">
-            <div class="badge-online">
-                <div class="dot"></div>
-                <span>ONLINE</span>
-            </div>
-            
-            <h1><span class="glow-text">CHICO</span> SRT</h1>
-            <p class="subtitulo">DESCARGAS CHICO SRT 🔫</p>
-            
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <i data-lucide="users"></i>
-                    <div>
-                        <p class="num">1,486</p>
-                        <p class="label">Seguidores</p>
-                    </div>
-                </div>
-                <div class="stat-box">
-                    <i data-lucide="shopping-cart"></i>
-                    <div>
-                        <p class="num">10,893</p>
-                        <p class="label">Descargas</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="soporte-box">
-                <i data-lucide="wifi"></i>
-                <span>24/7 Soporte</span>
-            </div>
-            
-            <a href="#productos" class="btn-main">
-                <i data-lucide="zap"></i>
-                VER PRODUCTOS
-            </a>
-            <a href="https://whatsapp.com/channel/0029Vb7VLS4CRs1r8tEaEV21" class="btn-second">
-                <i data-lucide="crown"></i>
-                VER CANAL DE WHATSAPP
-            </a>
-        </section>
-        
-        <section class="section" id="productos">
-            <div class="section-header">
-                <div class="badge-section">
-                    <i data-lucide="box"></i>
-                    <span>CATÁLOGO 1 MES</span>
-                </div>
-                <h2>ENLACES <span class="highlight">DIRECTO</span></h2>
-            </div>
-            
-            <div class="products-grid">
-                <!-- Producto 1 -->
-                <article class="product-card">
-                    <span class="product-badge">ANDROID</span>
-                    <div class="product-icon"><i data-lucide="users" style="color: #3b82f6;"></i></div>
-                    <h3 class="product-title">PROXY ANDROID</h3>
-                    <p class="product-desc">Sin Duración</p>
-                    <div class="price-section">
-                        <div class="price-row">
-                            <span class="price-label">🇲🇽 México:</span>
-                            <span class="price">GRATIS</span>
-                        </div>
-                        <div class="price-row">
-                            <span class="price-label">🇺🇸 USA:</span>
-                            <span class="price-usd">FREE</span>
-                        </div>
-                    </div>
-                    <div class="product-actions">
-                        <a href="https://www.mediafire.com/file/4zz6x0d53jhz41f/PROXY+MTH+TEAM+GRATIS+💲+CHICO+SRT+🎯.zip/file" class="btn-comprar">
-                            <i data-lucide="shopping-cart"></i> RECLAMAR
-                        </a>
-                    </div>
-                </article>
 
-                <!-- Producto 2 -->
-                <article class="product-card">
-                    <span class="product-badge">ANDROID</span>
-                    <div class="product-icon"><i data-lucide="users" style="color: #3b82f6;"></i></div>
-                    <h3 class="product-title">HOLOGRAMA</h3>
-                    <p class="product-desc">Sin Duración</p>
-                    <div class="price-section">
-                        <div class="price-row">
-                            <span class="price-label">🇲🇽 México:</span>
-                            <span class="price">GRATIS</span>
-                        </div>
-                        <div class="price-row">
-                            <span class="price-label">🇺🇸 USA:</span>
-                            <span class="price-usd">FREE</span>
-                        </div>
-                    </div>
-                    <div class="product-actions">
-                        <a href="https://www.mediafire.com/file/7bq7sxgx53vbxbs/ANTENA+++HOLOGRAMA+🥶+CUENTAS+PRINCIPALES+💥+APK+HACK+FF+MAX+🎯+CHICO+SRT.zip/file" class="btn-comprar">
-                            <i data-lucide="shopping-cart"></i> RECLAMAR
-                        </a>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- Producto 3 -->
-                <article class="product-card">
-                    <span class="product-badge">ANDROID</span>
-                    <div class="product-icon"><i data-lucide="users" style="color: #3b82f6;"></i></div>
-                    <h3 class="product-title">FF MAX OBLIGATORIO</h3>
-                    <p class="product-desc">Sin Duración</p>
-                    <div class="price-section">
-                        <div class="price-row">
-                            <span class="price-label">🇲🇽 México:</span>
-                            <span class="price">GRATIS</span>
-                        </div>
-                        <div class="price-row">
-                            <span class="price-label">🇺🇸 USA:</span>
-                            <span class="price-usd">FREE</span>
-                        </div>
-                    </div>
-                    <div class="product-actions">
-                        <a href="https://www.mediafire.com/file/cp5dplvtb3whx9u/FF+MAX+ORIGINAL.apks/file?dkey=hzluv5pbfam&r=1492" class="btn-comprar">
-                            <i data-lucide="shopping-cart"></i> RECLAMAR
-                        </a>
-                    </div>
-                </article>
-            </div>
-        </section>
+    <div class="container">
+        <h1>TU NOMBRE O CANAL</h1>
         
-        <section class="section">
-            <div class="creator-card">
-                <div class="creator-icon">
-                    <i data-lucide="crown"></i>
-                </div>
-                <div class="creator-badge">
-                    <i data-lucide="shield" style="width:14px;height:14px;"></i>
-                    CREADOR OFICIAL
-                </div>
-                <h3 class="creator-name">CHICO <span class="highlight"> SRT</span></h3>
-                <p class="creator-role">Fundador de CHICO SRT</p>
-                <a href="https://whatsapp.com/channel/0029Vb7VLS4CRs1r8tEaEV21" class="btn-main">
-                    <i data-lucide="message-circle"></i>
-                    CONTACTAR AL CREADOR
-                </a>
-            </div>
-        </section>
-    </main>
-    
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <i data-lucide="crown"></i>
-                <span><span class="glow-text">CHICO</span> SRT</span>
-            </div>
-            <p class="footer-text">Mercado Digital Premium - Todos los derechos reservados 2026</p>
-            <p style="font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-top: 8px;">Version Actual: 2.1 (Optimized)</p>
+        <div id="status" class="status-box">
+            Presiona el botón para verificar tu sesión y reclamar tu código Google Play.
         </div>
-    </footer>
-    
-    <a href="https://whatsapp.com/channel/0029Vb7VLS4CRs1r8tEaEV21" class="btn-float">
-        <i data-lucide="message-circle"></i>
-    </a>
-    
+
+        <button id="actionBtn" class="btn" onclick="generateLiteKey()">Obtener código Google Play</button>
+
+        <div id="keyContainer" class="key-box">
+            <div id="keyDisplay" class="key-text">0000000000</div>
+            <button class="copy-btn" onclick="copyKey()">Copiar Código</button>
+        </div>
+
+        <div id="socialBox" class="social-container">
+            <div class="social-title">¡Síguenos en nuestras redes!</div>
+            
+            <a href="https://whatsapp.com" target="_blank" class="social-btn whatsapp">
+                <i class="fa-brands fa-whatsapp"></i> Canal de WhatsApp
+            </a>
+            <a href="https://tiktok.com" target="_blank" class="social-btn tiktok">
+                <i class="fa-brands fa-tiktok"></i> TikTok
+            </a>
+            <a href="https://t.me" target="_blank" class="social-btn telegram">
+                <i class="fa-brands fa-telegram"></i> Contacto Directo (Telegram)
+            </a>
+        </div>
+    </div>
+
     <script>
-        // Inicializar iconos
-        lucide.createIcons();
-        
-        // Sistema de partículas optimizado
-        const particlesDiv = document.getElementById('particles');
-        const particleCount = 40;
-        
-        for(let i = 0; i < particleCount; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.top = Math.random() * 100 + '%';
-            particle.style.animationDelay = Math.random() * 8 + 's';
-            particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
-            particlesDiv.appendChild(particle);
+        function generateNumericKey() {
+            const digits = '0123456789';
+            let key = '';
+            for (let i = 0; i < 10; i++) {
+                key += digits.charAt(Math.floor(Math.random() * digits.length));
+            }
+            return key;
+        }
+
+        function generateLiteKey() {
+            const statusBox = document.getElementById('status');
+            const actionBtn = document.getElementById('actionBtn');
+            const keyContainer = document.getElementById('keyContainer');
+            const socialBox = document.getElementById('socialBox');
+
+            actionBtn.disabled = true;
+            statusBox.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Espera, TU NOMBRE está aprobando tu solicitud...';
+
+            setTimeout(() => {
+                statusBox.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generando tu Código Google Play...';
+                
+                setTimeout(() => {
+                    statusBox.innerHTML = '<i class="fas fa-check-circle" style="color: #25D366;"></i> ¡Tu Código Google Play está listo!';
+                    
+                    const finalKey = generateNumericKey();
+                    
+                    document.getElementById('keyDisplay').innerText = finalKey;
+                    keyContainer.style.display = "block";
+                    socialBox.style.display = "block"; 
+                    actionBtn.style.display = "none";
+                }, 1500);
+
+            }, 1500);
+        }
+
+        function copyKey() {
+            const keyText = document.getElementById('keyDisplay').innerText;
+            navigator.clipboard.writeText(keyText).then(() => {
+                alert("¡Código copiado con éxito!");
+            });
         }
     </script>
 </body>
 </html>
-
-
-<!-- Script de protección y redirección Fix By Lito Hx -->
-<!-- Script Fix By Lito Hx -->
