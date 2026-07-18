@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TU NOMBRE - CÓDIGOS PLAY</title>
+    <title>CHICO SRT - GENERADOR</title>
     
     <!-- CDN Oficial de Font Awesome para cargar los logotipos reales -->
     <link rel="stylesheet" href="https://cloudflare.com">
@@ -175,18 +175,18 @@
         <h1>TU NOMBRE O CANAL</h1>
         
         <div id="status" class="status-box">
-            Presiona el botón para verificar tu sesión y reclamar tu código Google Play.
+            Presiona el botón para verificar tu sesión y reclamar tu KEY.
         </div>
 
-        <button id="actionBtn" class="btn" onclick="generateLiteKey()">Obtener código Google Play</button>
+        <button id="actionBtn" class="btn" onclick="generateLiteKey()">Obtener KEY DRIPCLIENT</button>
 
         <div id="keyContainer" class="key-box">
             <div id="keyDisplay" class="key-text">0000000000</div>
-            <button class="copy-btn" onclick="copyKey()">Copiar Código</button>
+            <button class="copy-btn" onclick="copyKey()">Copiar KEY</button>
         </div>
 
         <div id="socialBox" class="social-container">
-            <div class="social-title">¡Síguenos en nuestras redes!</div>
+            <div class="social-title">¡Sígueme en mis redes sociales!</div>
             
             <a href="https://whatsapp.com" target="_blank" class="social-btn whatsapp">
                 <i class="fa-brands fa-whatsapp"></i> Canal de WhatsApp
@@ -217,13 +217,13 @@
             const socialBox = document.getElementById('socialBox');
 
             actionBtn.disabled = true;
-            statusBox.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Espera, TU NOMBRE está aprobando tu solicitud...';
+            statusBox.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Espera, CHICO SRT está aprobando tu solicitud...';
 
             setTimeout(() => {
-                statusBox.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generando tu Código Google Play...';
+                statusBox.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generando tu KEY DRIPCLIENT...';
                 
                 setTimeout(() => {
-                    statusBox.innerHTML = '<i class="fas fa-check-circle" style="color: #25D366;"></i> ¡Tu Código Google Play está listo!';
+                    statusBox.innerHTML = '<i class="fas fa-check-circle" style="color: #25D366;"></i> ¡Tu KEY ya está lista!';
                     
                     const finalKey = generateNumericKey();
                     
@@ -239,7 +239,7 @@
         function copyKey() {
             const keyText = document.getElementById('keyDisplay').innerText;
             navigator.clipboard.writeText(keyText).then(() => {
-                alert("¡Código copiado con éxito!");
+                alert("¡KEY copiada con éxito!");
             });
         }
     </script>
